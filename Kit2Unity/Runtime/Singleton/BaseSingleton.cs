@@ -1,5 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿// ----------------------------------------------------------------------------------------------------
+// Copyright © Guo jin ming. All rights reserved.
+// Homepage: https://kylin.app/
+// E-Mail: kevin@kylin.app
+// ----------------------------------------------------------------------------------------------------
 
 namespace Kit.Runtime
 {

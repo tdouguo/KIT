@@ -15,13 +15,13 @@ namespace Kit
     /// <summary>
     /// Unity 工具函数
     /// </summary>
-    public  static partial class UtilityMisc
+    public static partial class UtilityMisc
     {
         public static string ConfigFolderPath = Application.persistentDataPath + "/config/";
         public static string AssetBundleFolderPath = Application.persistentDataPath + "/AssetBundle/" + GetCurrentPlatform() + "/";
         public static string SpriteFolderPath = Application.persistentDataPath + "/sprite/";
         public static string ArchiveFolderPath = Application.persistentDataPath + "/archive/";
-        
+
         /// <summary>获取当前平台类型字符串</summary>
         public static string GetCurrentPlatform()
         {
@@ -34,13 +34,46 @@ namespace Kit
 #endif
         }
 
-        #region ... Load
+        #region ... Request
 
-        public static IEnumerator LoadAssetByWWW(string url, LoadComplete loadComplete)
+        public static IEnumerator RequestByWWW(string url, WWWForm wwwForm, RequestComplete loadComplete)
+        {
+            if (string.IsNullOrEmpty(url) || wwwForm == null)
+            {
+                Debug.LogError("RequestAssetByWWW url is null or empty. ");
+                yield break;
+            }
+            using (WWW www = new WWW(url, wwwForm))
+            {
+                yield return www;
+                try
+                {
+                    if (www.isDone && string.IsNullOrEmpty(www.error))
+                    {
+                        loadComplete(www);
+                    }
+                    else
+                    {
+                        Debug.LogErrorFormat("LoadAssetByWWW load '{0}'.error '{1}'. ", url, www.error);
+                        loadComplete(null, www.error);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogErrorFormat("LoadAssetByWWW '{0}' error '{1}', {2}. ", url, e.Message, e.StackTrace);
+                }
+                finally
+                {
+                    www.Dispose();
+                }
+            }
+        }
+
+        public static IEnumerator RequestByWWW(string url, RequestComplete loadComplete)
         {
             if (string.IsNullOrEmpty(url))
             {
-                Debug.LogError("LoadAssetByWWW url is null or empty. ");
+                Debug.LogError("RequestAssetByWWW url is null or empty. ");
                 yield break;
             }
             using (WWW www = new WWW(url))
@@ -69,14 +102,14 @@ namespace Kit
             }
         }
 
-        public static IEnumerator LoadAssetBytesByWWW(string url, Action<byte[]> callback)
+        public static IEnumerator RequestByWWW(string url, Action<byte[]> callback)
         {
             if (string.IsNullOrEmpty(url))
             {
                 Debug.LogError("load fail：url is null or empty. ");
                 yield break;
             }
-            yield return LoadAssetByWWW(url, (_www, err) =>
+            yield return RequestByWWW(url, (_www, err) =>
             {
                 if (callback != null)
                     callback(_www != null ? _www.bytes : null);
@@ -89,7 +122,7 @@ namespace Kit
 
         public static IEnumerator LoadImage(string url, Action<Sprite> callback)
         {
-            yield return LoadAssetByWWW(url, (_www, err) =>
+            yield return RequestByWWW(url, (_www, err) =>
             {
                 Sprite sprite = null;
                 if (_www != null)
@@ -103,7 +136,7 @@ namespace Kit
 
         public static IEnumerator LoadImage(string url, Action<Sprite, byte[]> callback)
         {
-            yield return LoadAssetByWWW(url, (_www, err) =>
+            yield return RequestByWWW(url, (_www, err) =>
             {
                 Sprite sprite = null;
                 byte[] bytes = null;
@@ -310,7 +343,7 @@ namespace Kit
 
         public static IEnumerator LoadAudioClip(string url, Action<AudioClip> callback)
         {
-            yield return LoadAssetByWWW(url, (_www, err) =>
+            yield return RequestByWWW(url, (_www, err) =>
             {
                 AudioClip audioClip = null;
                 if (_www != null)
@@ -492,8 +525,8 @@ namespace Kit
     }
 
     /// <summary>
-    /// 加载完成
+    /// 请求完成
     /// </summary>
-    public delegate void LoadComplete(WWW www, string errorMsg = null);
+    public delegate void RequestComplete(WWW www, string errorMsg = null);
 
 }

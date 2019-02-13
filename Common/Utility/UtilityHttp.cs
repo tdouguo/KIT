@@ -10,7 +10,7 @@ namespace Kit
 {
     public static partial class Utility
     {
-        public static class UtilityHttp
+        public static class Http
         {
             public static string EscapeString(string stringToEscape)
             {

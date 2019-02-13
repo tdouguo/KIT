@@ -73,7 +73,7 @@ namespace Kit
 
                 return result;
             }
-
+             
             /// <summary>
             /// 加密 sha1 算法
             /// </summary>
@@ -110,7 +110,9 @@ namespace Kit
                 }
                 return EnText.ToString();
             }
+             
         }
+ 
     }
    
 }
