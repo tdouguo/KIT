@@ -13,7 +13,7 @@
 
 > We are currently preparing to convert the comments in the code to the English version. We look forward to your joining.
 
-> 了解 [Kylin-Studio/Core](https://github.com/Kylin-Studio/kit-cre) 源码
+<!--> 了解 [Kylin-Studio/Core](https://github.com/Kylin-Studio/kit-core) 源码 -->
 
 
 ## 关于 Kit
