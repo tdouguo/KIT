@@ -1,19 +1,19 @@
 <p align="center"><img width="128" height="128" src="https://kylin.app/imgs/logo.png"></p>
 
 <p align="center">
-<a href="https://github.com/Kylin-Studio/Kit/blob/master/LICENSE">
+<a href="https://github.com/Kylin-Studio/kit-cre/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
 <a href="https://ci.appveyor.com/project/gjmvvv/kit">
   <img src="https://ci.appveyor.com/api/projects/status/tk3o571mwbw2rykj?svg=true" title="Build status"/></a>
-<a href="https://github.com/Kylin-Studio/Kit/">
+<a href="https://github.com/Kylin-Studio/kit-cre/">
   <img src="https://img.shields.io/badge/version-v1-green.svg" title="GitHub version" ></a>
-<a href="https://github.com/Kylin-Studio/Kit/releases">
+<a href="https://github.com/Kylin-Studio/kit-cre/releases">
   <img src="https://img.shields.io/badge/Download-1k-green.svg" title="Downloads" /></a>
 </p>
 
 > We are currently preparing to convert the comments in the code to the English version. We look forward to your joining.
 
-> 了解 [Kylin-Studio/Kit](https://github.com/Kylin-Studio/Kit) 源码
+> 了解 [Kylin-Studio/Core](https://github.com/Kylin-Studio/kit-cre) 源码
 
 
 ## 关于 Kit
@@ -27,70 +27,6 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 - 任意基础组件都可抽取到其他项目中使用
 - 业务服务基于基础组件扩展(业务服务+依赖基础组件)即可抽取到其他项目中使用.
 
-
----
-
-***对象池(pool)*** [敬请期待]
-
-***有限状态机(fsm)*** [敬请期待]
-
-***数据(data)*** [敬请期待]
-
-1. data-table 二维表结构(excle,sqlite)
-2. data-node 节点结构(xml,json)
-
-
-***事件(event)*** [敬请期待] 提供模块之间消息通讯, 以及异步线程之间通讯
-
-***网络(net)*** [敬请期待] Socket+Protobuf
-
-1. net-tcp
-	- 提供断线重连、心跳检测、粘包、拆包
-	- 扩展协议通讯 protobuf
-2. net-udp
-3. net-kcp
-4. net-http Get、Post请求, 提供自定义请求头,RES非对称加密 等技术处理
-
-
-***Utility*** 工具 
-
-1. [依赖Unity] 截屏、GPS定位、IO处理、音频转换(AudioClip)、Windows对话框、Misc(WWW请求、图片、UI、Input)等
-2. 时间戳、 数据处理、Misc(string相关处理)等
-
-
----
-
-***新手引导(NoviceGuide)*** [敬请期待] 
-
-
-***国际化(i18n)*** [敬请期待]
-
-- [依赖] Data
-
-
-***流程(process)*** [敬请期待] 控制游戏/App整体流程
-
-***实体(entity)*** [敬请期待] 
-
-***声音(audio)*** [敬请期待] 
-
-***视频(video)*** [敬请期待] 
-
-***资源(res)*** [敬请期待] 提供2种加载模 自由切换
-
-1. AssetBundle 加载资源 AssetBundle.Model (FoxRes(热更新模式),Packet(内嵌在安装包内模式))
-	- AssetBundle Editor
-2. Resources 加载资源
-3. res-audioclip 加载网络音频(缓存/不缓存)、加载AB音频、加载Respurces音频、加载Packet内音频
-4. res-sprite 加载网络图片(缓存/不缓存)、加载AB图片、加载Resources图片、加载Packet图片
-
----
-
-***内嵌Web浏览器(BuiltInWeb)***
-
-***热更新(xLua\IRuntime)***
-
----
 
 
 ## 学习 Kit
@@ -113,8 +49,8 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 ## 技术支持
 
 * E-mail: kevin@kylin.app
-* home: [https://kylin.app/](https://kylin.app/)
-
+* 主页: [https://kylin.app/](https://kylin.app/)
+* 手册文档 [https://manual.kylin.app](https"//manual.kylin.app)
 
 ## 优秀的开源框架/项目
 - [GameFramework](http://gameframework.cn/) 是一个基于 Unity 5.3+ 引擎的游戏框架，主要对游戏开发过程中常用模块进行了封装，很大程度地规范开发过程、加快开发速度并保证产品质量。（[@Ellan](https://github.com/EllanJiang)）
