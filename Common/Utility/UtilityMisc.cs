@@ -576,6 +576,78 @@ namespace Kit
 
             #endregion
 
+            public static Hashtable GetDeviceInfo()
+            {
+                string deviceId = SystemInfo.deviceUniqueIdentifier;
+                string deviceName = SystemInfo.deviceName;
+                string deviceModel = SystemInfo.deviceModel;
+                string processorType = SystemInfo.processorType;
+                string processorCount = SystemInfo.processorCount.ToString();
+                string memorySize = SystemInfo.systemMemorySize.ToString();
+                string operatingSystem = SystemInfo.operatingSystem;
+                string iOSGeneration = string.Empty;
+                string iOSSystemVersion = string.Empty;
+                string iOSVendorIdentifier = string.Empty;
+#if UNITY_IOS && !UNITY_EDITOR
+                iOSGeneration = UnityEngine.iOS.Device.generation.ToString();
+                iOSSystemVersion = UnityEngine.iOS.Device.systemVersion;
+                iOSVendorIdentifier = UnityEngine.iOS.Device.vendorIdentifier ?? string.Empty;
+#endif
+                string version = Application.version;
+                string platform = Application.platform.ToString();
+                string systemLanguage = Application.systemLanguage.ToString();
+                string unityVersion = Application.unityVersion;
+                string installMode = Application.installMode.ToString();
+                string sandboxType = Application.sandboxType.ToString();
+                string screenWidth = Screen.width.ToString();
+                string screenHeight = Screen.height.ToString();
+                string screenDpi = Screen.dpi.ToString();
+                string screenOrientation = Screen.orientation.ToString();
+                string screenResolution = string.Format("{0} x {1} @ {2}Hz",
+                    Screen.currentResolution.width.ToString(), Screen.currentResolution.height.ToString(),
+                    Screen.currentResolution.refreshRate.ToString());
+                string useWifi = (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork).ToString();
+
+                string graphicsDeviceID = SystemInfo.graphicsDeviceID.ToString();    // 图形设备标识Id
+                string graphicsDeviceName = SystemInfo.graphicsDeviceName;       // 图形设备名称
+                string graphicsDeviceType = SystemInfo.graphicsDeviceType.ToString();    // 图形设备类型
+                string graphicsDeviceVendor = SystemInfo.graphicsDeviceVendor;   // 图形设备供应商
+                string graphicsDeviceVendorID = SystemInfo.graphicsDeviceVendorID.ToString();   // 图形设备供应商标识Id
+                string graphicsDeviceVersion = SystemInfo.graphicsDeviceVersion;  // 图形设备API 类型和驱动程序版本
+                string graphicsMemorySize = SystemInfo.graphicsMemorySize.ToString();    // 图形设备内存大小 
+
+                Hashtable dic = new Hashtable();
+                dic["DeviceId"] = deviceId;
+                dic["DeviceName"] = deviceName;
+                dic["DeviceModel"] = deviceModel;
+                dic["ProcessorType"] = processorType;
+                dic["ProcessorCount"] = processorCount;
+                dic["MemorySize"] = memorySize;
+                dic["OperatingSystem"] = operatingSystem;
+                dic["IOSGeneration"] = iOSGeneration;
+                dic["IOSSystemVersion"] = iOSSystemVersion;
+                dic["IOSVendorIdentifier"] = iOSVendorIdentifier;
+                dic["version"] = version;
+                dic["Platform"] = platform;
+                dic["systemLanguage"] = systemLanguage;
+                dic["UnityVersion"] = unityVersion;
+                dic["InstallMode"] = installMode;
+                dic["SandboxType"] = sandboxType;
+                dic["ScreenWidth"] = screenWidth;
+                dic["ScreenHeight"] = screenHeight;
+                dic["ScreenDPI"] = screenDpi;
+                dic["ScreenOrientation"] = screenOrientation;
+                dic["ScreenResolution"] = screenResolution;
+                dic["UseWifi"] = useWifi;
+                dic["GraphicsDeviceID"] = graphicsDeviceID;
+                dic["GraphicsDeviceName"] = graphicsDeviceName;
+                dic["GraphicsDeviceType"] = graphicsDeviceType;
+                dic["GraphicsDeviceVendor"] = graphicsDeviceType;
+                dic["GraphicsDeviceVendorID"] = graphicsDeviceVendorID;
+                dic["GraphicsDeviceVersion"] = graphicsDeviceVersion;
+                dic["GraphicsMemorySize"] = graphicsMemorySize;
+                return dic;
+            }
         }
 
         /// <summary>
