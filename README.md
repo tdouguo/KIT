@@ -1,19 +1,19 @@
-<p align="center"><img width="128" height="128" src="https://kylin.app/imgs/logo.png"></p>
+<p align="center"><img width="128" height="128" src="https://kylin.app/images/logo.png"></p>
 
 <p align="center">
-<a href="https://github.com/Kylin-Studio/kit-cre/blob/master/LICENSE">
+<a href="https://github.com/KylinTechnologies/kit-cre/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
 <a href="https://ci.appveyor.com/project/gjmvvv/kit">
   <img src="https://ci.appveyor.com/api/projects/status/tk3o571mwbw2rykj?svg=true" title="Build status"/></a>
-<a href="https://github.com/Kylin-Studio/kit-cre/">
+<a href="https://github.com/KylinTechnologies/kit/">
   <img src="https://img.shields.io/badge/version-v1-green.svg" title="GitHub version" ></a>
-<a href="https://github.com/Kylin-Studio/kit-cre/releases">
+<a href="https://github.com/KylinTechnologies/kit/releases">
   <img src="https://img.shields.io/badge/Download-1k-green.svg" title="Downloads" /></a>
 </p>
 
 > We are currently preparing to convert the comments in the code to the English version. We look forward to your joining.
 
-<!-- 了解 [Kylin-Studio/Core](https://github.com/Kylin-Studio/kit-core) 源码 -->
+了解 [Kylin-Studio/Core](https://github.com/Kylin-Studio/kit-core) 源码
 
 
 ## 关于 Kit
