@@ -29,11 +29,15 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 
 
 
+
 ## 学习 Kit
 
-[文档](https://manual.kylin.app/) 
+[文档](https://kylin.app/) 
 
 或者您也可以通过 issues 来提出您的问题，我们及时为您解答。
+
+请不要提问「现成」问题，即那些简单搜一搜就能得到答案的，对经验和洞察力几乎没有要求的问题。 
+详请参考《[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)》
 
 
 ## 授权
@@ -48,10 +52,15 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 
 ## 技术支持
 
+* QQ群: 238442455
 * E-mail: kevin@kylin.app
-* 文档: [https://kylin.app/](https://kylin.app/)
+
 
 ## 优秀的开源框架/项目
+- [QFramework]()
+
+- [XAssets](https://github.com/xasset/xasset) xasset 提供了一种使用资源路径的简单的方式来加载资源，简化了Unity项目资源打包，更新，加载，和回收的作业流程。 ([fjy](https://github.com/fengjiyuan))
+
 - [GameFramework](http://gameframework.cn/) 是一个基于 Unity 5.3+ 引擎的游戏框架，主要对游戏开发过程中常用模块进行了封装，很大程度地规范开发过程、加快开发速度并保证产品质量。（[@Ellan](https://github.com/EllanJiang)）
 
 - [ET框架](https://github.com/egametang/ET) 是一个Unity3d客户端+C#分布式服务端框架。使用组件式开发，提供客户端热更，服务端热更功能，提供erlang式分布式消息机制（[@熊猫](https://github.com/egametang)）
