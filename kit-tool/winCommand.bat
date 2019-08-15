@@ -1,0 +1,23 @@
+@doskey sayhello=echo Hello $*
+@doskey cattxt=type xxxxxxxxxxxx.txt $*
+@doskey pwd=echo %cd% $*
+@doskey gl=git pull $*
+@doskey ga=git add -A $*
+@doskey gm=git commit -m $*
+@doskey gp=git push $*
+@doskey gs=git status $*
+@doskey gc=git checkout $*
+@doskey gk=git clean -xfd $*
+@doskey gb=git branch $*
+@doskey gd=git diff $* 
+@doskey python="C:\Python27\python.exe" $*
+@doskey fossil="D:\DevTools\fossil.exe" $*
+
+@doskey ant=D:\xingqi_lh\CocosCodeTools\apache-ant-1.9.13\bin\ant $*
+@doskey ls=dir /b $*
+@doskey l=dir /od/p/q/tw $*
+@doskey cp=copy $*
+@doskey exup=D:\mycmd\extractunitypackage.py $*
+@doskey ins=D:\ApkFiles\install $*
+@doskey vi="D:\Program Files\Notepad++\notepad++.exe" $*
+@doskey insapk="D:\ApkFiles\installApk.bat" $*

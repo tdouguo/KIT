@@ -1,0 +1,616 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kit</name>
+    </assembly>
+    <members>
+        <member name="T:Kit.KitException">
+            <summary>
+            框架异常类。
+            </summary>
+        </member>
+        <member name="M:Kit.KitException.#ctor">
+            <summary>
+            初始化框架异常类的新实例。
+            </summary>
+        </member>
+        <member name="M:Kit.KitException.#ctor(System.String)">
+            <summary>
+            使用指定错误消息初始化框架异常类的新实例。
+            </summary>
+            <param name="message">描述错误的消息。</param>
+        </member>
+        <member name="M:Kit.KitException.#ctor(System.String,System.Exception)">
+            <summary>
+            使用指定错误消息和对作为此异常原因的内部异常的引用来初始化游戏框架异常类的新实例。
+            </summary>
+            <param name="message">解释异常原因的错误消息。</param>
+            <param name="innerException">导致当前异常的异常。如果 innerException 参数不为空引用，则在处理内部异常的 catch 块中引发当前异常。</param>
+        </member>
+        <member name="M:Kit.KitException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            用序列化数据初始化游戏框架异常类的新实例。
+            </summary>
+            <param name="info">存有有关所引发异常的序列化的对象数据。</param>
+            <param name="context">包含有关源或目标的上下文信息。</param>
+        </member>
+        <member name="T:Kit.ILogHelper">
+            <summary>
+            日志辅助器
+            </summary>
+        </member>
+        <member name="M:Kit.ILogHelper.OutputLog(Kit.LogType,System.String)">
+            <summary>
+            输出日志
+            </summary>
+            <param name="logType"></param>
+            <param name="content"></param>
+        </member>
+        <member name="T:Kit.Log">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="P:Kit.Log.LogEnable">
+            <summary>
+            日志是否开启
+            </summary>
+        </member>
+        <member name="M:Kit.Log.SetLogHelper(Kit.ILogHelper)">
+            <summary>
+            设置日志辅助器
+            </summary>
+            <param name="logHelper"></param>
+        </member>
+        <member name="M:Kit.Log.D(System.String)">
+            <summary>
+            调试级日志
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:Kit.Log.D(System.String,System.Object[])">
+            <summary>
+            调试级日志
+            </summary>
+            <param name="format"></param>
+            <param name="objs"></param>
+        </member>
+        <member name="M:Kit.Log.I(System.String)">
+            <summary>
+            信息级日志
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:Kit.Log.I(System.String,System.Object[])">
+            <summary>
+            信息级日志
+            </summary>
+            <param name="format"></param>
+            <param name="objs"></param>
+        </member>
+        <member name="M:Kit.Log.W(System.String)">
+            <summary>
+            警告级日志
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:Kit.Log.W(System.String,System.Object[])">
+            <summary>
+            警告级日志
+            </summary>
+            <param name="format"></param>
+            <param name="objs"></param>
+        </member>
+        <member name="M:Kit.Log.E(System.String)">
+            <summary>
+            错误级日志
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:Kit.Log.E(System.String,System.Object[])">
+            <summary>
+            错误级日志
+            </summary>
+            <param name="format"></param>
+            <param name="objs"></param>
+        </member>
+        <member name="M:Kit.Log.Exception(System.String)">
+            <summary>
+            异常级日志
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:Kit.Log.Exception(System.String,System.Object[])">
+            <summary>
+            异常级日志
+            </summary>
+            <param name="format"></param>
+            <param name="objs"></param>
+        </member>
+        <member name="T:Kit.LogType">
+            <summary>
+            日志类型
+            </summary>
+        </member>
+        <member name="F:Kit.LogType.DEBUG">
+            <summary>
+            调试级日志
+            </summary>
+        </member>
+        <member name="F:Kit.LogType.INFO">
+            <summary>
+            信息级日志
+            </summary>
+        </member>
+        <member name="F:Kit.LogType.WARN">
+            <summary>
+            警告级日志
+            </summary>
+        </member>
+        <member name="F:Kit.LogType.ERROR">
+            <summary>
+            错误级日志
+            </summary>
+        </member>
+        <member name="F:Kit.LogType.EXCEPTION">
+            <summary>
+            异常级日志
+            </summary>
+        </member>
+        <member name="T:Kit.CollectionHelper">
+            <summary>
+            集合或数组的助手类
+            </summary>
+        </member>
+        <member name="M:Kit.CollectionHelper.OrderBy``2(``0[],Kit.CollectionHelper.SelectHandler{``0,``1})">
+            <summary>
+            升序排列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="array"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:Kit.CollectionHelper.OrderByDescending``2(``0[],Kit.CollectionHelper.SelectHandler{``0,``1})">
+            <summary>
+            降序排列
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="array"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="T:Kit.CollectionHelper.FindHandler`1">
+            <summary>
+            查找委托
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Kit.CollectionHelper.SelectHandler`2">
+            <summary>
+            选择委托
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.CollectionHelper.Find``1(``0[],Kit.CollectionHelper.FindHandler{``0})">
+            <summary>
+            查找
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="handler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.CollectionHelper.FindAll``1(``0[],Kit.CollectionHelper.FindHandler{``0})">
+            <summary>
+            查找
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="handler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.CollectionHelper.Select``2(``0[],Kit.CollectionHelper.SelectHandler{``0,``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="array"></param>
+            <param name="handler"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Kit.Utility">
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Kit.Utility.Path">
+            <summary>
+            路径相关的实用函数。
+            </summary>
+        </member>
+        <member name="M:Kit.Utility.Path.GetRegularPath(System.String)">
+            <summary>
+            获取规范的路径。
+            </summary>
+            <param name="path">要规范的路径。</param>
+            <returns>规范的路径。</returns>
+        </member>
+        <member name="M:Kit.Utility.Path.GetCombinePath(System.String[])">
+            <summary>
+            获取连接后的路径。
+            </summary>
+            <param name="path">路径片段。</param>
+            <returns>连接后的路径。</returns>
+        </member>
+        <member name="M:Kit.Utility.Path.GetRemotePath(System.String[])">
+            <summary>
+            获取远程格式的路径（带有file:// 或 http:// 前缀）。
+            </summary>
+            <param name="path">原始路径。</param>
+            <returns>远程格式路径。</returns>
+        </member>
+        <member name="M:Kit.Utility.Path.GetResourceNameWithSuffix(System.String)">
+            <summary>
+            获取带有后缀的资源名。
+            </summary>
+            <param name="resourceName">原始资源名。</param>
+            <returns>带有后缀的资源名。</returns>
+        </member>
+        <member name="M:Kit.Utility.Path.GetResourceNameWithCrc32AndSuffix(System.String,System.Int32)">
+            <summary>
+            获取带有 CRC32 和后缀的资源名。
+            </summary>
+            <param name="resourceName">原始资源名。</param>
+            <param name="hashCode">CRC32 哈希值。</param>
+            <returns>带有 CRC32 和后缀的资源名。</returns>
+        </member>
+        <member name="M:Kit.Utility.Path.RemoveEmptyDirectory(System.String)">
+            <summary>
+            移除空文件夹。
+            </summary>
+            <param name="directoryName">要处理的文件夹名称。</param>
+            <returns>是否移除空文件夹成功。</returns>
+        </member>
+        <member name="T:Kit.Utility.Text">
+            <summary>
+            字符相关的实用函数。
+            </summary>
+        </member>
+        <member name="M:Kit.Utility.Text.Format(System.String,System.Object)">
+            <summary>
+            获取格式化字符串。
+            </summary>
+            <param name="format">字符串格式。</param>
+            <param name="arg0">字符串参数 0。</param>
+            <returns>格式化后的字符串。</returns>
+        </member>
+        <member name="M:Kit.Utility.Text.Format(System.String,System.Object,System.Object)">
+            <summary>
+            获取格式化字符串。
+            </summary>
+            <param name="format">字符串格式。</param>
+            <param name="arg0">字符串参数 0。</param>
+            <param name="arg1">字符串参数 1。</param>
+            <returns>格式化后的字符串。</returns>
+        </member>
+        <member name="M:Kit.Utility.Text.Format(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            获取格式化字符串。
+            </summary>
+            <param name="format">字符串格式。</param>
+            <param name="arg0">字符串参数 0。</param>
+            <param name="arg1">字符串参数 1。</param>
+            <param name="arg2">字符串参数 2。</param>
+            <returns>格式化后的字符串。</returns>
+        </member>
+        <member name="M:Kit.Utility.Text.Format(System.String,System.Object[])">
+            <summary>
+            获取格式化字符串。
+            </summary>
+            <param name="format">字符串格式。</param>
+            <param name="args">字符串参数。</param>
+            <returns>格式化后的字符串。</returns>
+        </member>
+        <member name="M:Kit.Utility.Text.GetFullName``1(System.String)">
+            <summary>
+            根据类型和名称获取完整名称。
+            </summary>
+            <typeparam name="T">类型。</typeparam>
+            <param name="name">名称。</param>
+            <returns>完整名称。</returns>
+        </member>
+        <member name="M:Kit.Utility.Text.GetFullName(System.Type,System.String)">
+            <summary>
+            根据类型和名称获取完整名称。
+            </summary>
+            <param name="type">类型。</param>
+            <param name="name">名称。</param>
+            <returns>完整名称。</returns>
+        </member>
+        <member name="T:Kit.Utility.Data">
+            <summary>
+            数据相关处理
+            </summary>
+        </member>
+        <member name="M:Kit.Utility.Data.SplitDataRowByTextCsv(System.String)">
+            <summary>
+            分割数据 安装多行分割成一行一行 CSV 
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Data.SplitDataColumnByTextCsvOneRow(System.String)">
+            <summary>
+            分割数据 按照一行CSV数据切割 单个数据
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Kit.Utility.Http">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Kit.Utility.Http.EscapeString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stringToEscape"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Http.UnescapeString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stringToUnescape"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Kit.Utility.IO">
+            <summary>
+             
+            </summary> 
+        </member>
+        <member name="M:Kit.Utility.IO.CreateTextFile(System.String,System.String)">
+            <summary> 在指定目录下创建文本文件</summary>
+        </member>
+        <member name="M:Kit.Utility.IO.CreateBytesFile(System.String,System.Byte[])">
+            <summary> 在指定目录下创建二进制文件</summary>
+        </member>
+        <member name="M:Kit.Utility.IO.GetFileName(System.String)">
+            <summary>获取指定路径的文件名，不包含后缀</summary>
+        </member>
+        <member name="M:Kit.Utility.IO.TryDeleteFile(System.String)">
+            <summary>
+            删除删除文件
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.IO.BinaryReader(System.String,System.Action{System.IO.BinaryReader},System.Text.Encoding)">
+            <summary>
+            二进制读取
+            </summary>
+            <param name="path"></param>
+            <param name="readerCallback"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Kit.Utility.IO.BinaryReaderBytes(System.String,System.Text.Encoding)">
+            <summary>
+            二进制读取
+            </summary>
+            <param name="path"></param> 
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Kit.Utility.IO.BinaryReaderString(System.String,System.Text.Encoding)">
+            <summary>
+            二进制读取
+            </summary>
+            <param name="path"></param> 
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Kit.Utility.IO.BinaryWriter(System.String,System.Action{System.IO.BinaryWriter},System.Text.Encoding)">
+            <summary>
+            二进制写入
+            </summary>
+            <param name="path"></param>
+            <param name="writerCallback"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Kit.Utility.IO.BinaryWriterBytes(System.String,System.Byte[],System.Text.Encoding)">
+            <summary>
+            二进制写入
+            </summary>
+            <param name="path"></param>
+            <param name="bytes"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Kit.Utility.IO.BinaryWriterString(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            二进制写入
+            </summary>
+            <param name="path"></param>
+            <param name="text"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Kit.Utility.IO.FileReadText(System.String,System.Text.Encoding)">
+            <summary>
+            读取文本
+            </summary>
+            <param name="path"></param>
+            <param name="encoding">默认为null 则UTF-8 </param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.IO.FileWriteText(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            写入文件
+            </summary>
+            <param name="path"></param>
+            <param name="text"></param>
+            <param name="encoding">默认为null 则UTF-8 </param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.IO.CheckDirectory(System.String)">
+            <summary>
+            检查文件路径是否存储
+            </summary>
+            <param name="fileName">文件名称</param>
+        </member>
+        <member name="M:Kit.Utility.IO.DeleteFolder(System.String,System.String[])">
+            <summary>
+            删除文件夹里面部分内容
+            </summary>
+            <param name="folderPath"></param>
+            <param name="ignore">忽略数组 注意 路径 为\  </param>
+        </member>
+        <member name="M:Kit.Utility.IO.CopyFolder(System.String,System.String,System.Boolean)">
+            <summary>
+            拷贝文件夹
+            </summary>
+            <param name="sourceDirectoryName"></param>
+            <param name="targetDirectoryName"></param>
+            <param name="isForce"></param>
+        </member>
+        <member name="M:Kit.Utility.IO.GetFileInfoByFolder(System.String,System.IO.SearchOption,System.String)">
+            <summary>获取指定文件夹下文件信息</summary>
+        </member>
+        <member name="T:Kit.Utility.Misc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Kit.Utility.Misc.GetLengthString(System.Int32)">
+            <summary>
+            获取当前的 长度 bytes kb mb gb
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Misc.GetLengthStringMB(System.Int64)">
+            <summary>
+            获取当前的 长度  mb gb
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Misc.NumToString(System.Int64)">
+            <summary>
+            将数字转化为###.##万、百万、千万或###.##亿的结构,当数字小于99999时不转化
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Misc.ReduceStringToLength(System.String,System.Int32)">
+            <summary>缩减字符串到指定字节长度，超出部分使用“...”代替</summary>
+        </member>
+        <member name="M:Kit.Utility.Misc.ParseText(System.String,System.String,System.String,System.Func{System.String,System.String})">
+            <summary>
+            解析字符串 
+            </summary>
+            <param name="text">文本内容</param>
+            <param name="beginTag"> 开始标签 </param>
+            <param name="endTag"> 结束标签 </param>
+            <param name="getTextKeyAction"> 标签内的内容 替换函数
+                1. 如果为空则返回 标签开始-标签结束的内容
+                2. 如果不为空则 string 传参是标签内的内容 返回值需要返回替换的内容，把文本内容中开始标签和结束标签移除 标签中内容替换返回的文本 
+            </param>
+            <returns></returns>
+            e.g.
+               1 = ParseText("Button<L>1</L>","<L>","</L>",null); 结果返回1  标签中的内容反馈
+               按钮 = ParseText("<L>1</L>","<L>","</L>",(text)=>{ return "按钮";}); 结果返回1  标签中的内容反馈
+        </member>
+        <member name="M:Kit.Utility.Misc.GetMillionFromByte(System.Int64)">
+            <summary>字节转兆,B->MB</summary>
+        </member>
+        <member name="M:Kit.Utility.Misc.GetEnumCount``1">
+            <summary>获取枚举成员总数</summary>
+        </member>
+        <member name="T:Kit.Utility.Time">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Kit.Utility.Time.GetDateTimeByTimeStamp(System.Int64)">
+            <summary>时间戳转DateTime</summary>
+        </member>
+        <member name="M:Kit.Utility.Time.GetTimeStampByDateTime(System.DateTime)">
+            <summary>DateTime转时间戳</summary>
+        </member>
+        <member name="M:Kit.Utility.Time.GetTimeStampByUtcNow">
+            <summary>
+            获取当前时间戳long类型的
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Time.GetTimeStampStrByUtcNow">
+            <summary>
+            获取当前时间戳的字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Time.GetTimeStrToMS(System.Int32)">
+            <summary> 时间转分秒结构 MM:SS </summary>
+        </member>
+        <member name="T:Kit.Utility.Encryption">
+            <summary>
+            加密解密相关的实用函数。
+            </summary>
+        </member>
+        <member name="M:Kit.Utility.Encryption.GetQuickXorBytes(System.Byte[],System.Byte[])">
+            <summary>
+            将 bytes 使用 code 做异或运算的快速版本。
+            </summary>
+            <param name="bytes">原始二进制流。</param>
+            <param name="code">异或二进制流。</param>
+            <returns>异或后的二进制流。</returns>
+        </member>
+        <member name="M:Kit.Utility.Encryption.GetXorBytes(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            将 bytes 使用 code 做异或运算。
+            </summary>
+            <param name="bytes">原始二进制流。</param>
+            <param name="code">异或二进制流。</param>
+            <param name="length">异或计算长度，若小于等于 0，则计算整个二进制流。</param>
+            <returns>异或后的二进制流。</returns>
+        </member>
+        <member name="M:Kit.Utility.Encryption.EncryptToSHA1(System.String)">
+            <summary>
+            加密 sha1 算法
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kit.Utility.Encryption.HmacSha1Sign(System.String,System.String)">
+            <summary>
+            HMAC-SHA1加密算法
+            </summary> 
+            <param name="encryptText">源文</param>
+            <param name="encryptKey">密钥</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

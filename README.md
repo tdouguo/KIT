@@ -16,16 +16,56 @@
 了解 [Kylin-Studio/Core](https://github.com/Kylin-Studio/kit-core) 源码
 
 
-## 关于 Kit
+## 关于 Kit[尚未出生,孵化中. . . ]
 
-Kit for Unity 是Unity3D开发的工具包集合, 集成常见的开发组件以免于重复造轮子。
+Kit 是Unity3D开发的工具包集合, 集成常见的开发组件,工具,组件库等. 免于重复造轮子
+,Kit设计初衷则是根据业务需求自由组合搭配其中组件\tool\dll等,项目在任何阶段都可以轻松接入。
 
-Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目在任何阶段都可以轻松接入。
 
-由多个部分组成Kit, 例: 基础组件、业务服务等。
+## 主要特色
 
-- 任意基础组件都可抽取到其他项目中使用
-- 业务服务基于基础组件扩展(业务服务+依赖基础组件)即可抽取到其他项目中使用.
+kit-core [.net]
+
+- base
+	- 静态工具(时间戳转换,字符串优化,IO相关操作)
+	- 事件消息
+	- 引用池
+- 自定义池
+- 线程池
+
+
+kit-unity
+- [ ] (Timeline)新手引导编辑器
+- [ ] (Timeline)剧情编辑器
+- [ ] 任务编辑器
+- [ ] 技能编辑器
+- [ ] 动画编辑器
+- [ ] 特效编辑器
+- [ ] 2D地图编辑器
+	- 根据刷的方块或其他自动生成1个物理碰撞或安装指定规则生成大的碰撞
+	- 刷地图版块功能
+- [ ] ***Setting*** 实现本地数据缓存, key=value
+- [ ] ***Network*** 实现网络连接 tcp,udp,kcp
+	- [ ] socket-tcp protobuf
+	- [ ] scoket-udp
+	- [ ] socket-kcp
+- [ ] ***FSM*** 有限状态机
+- [ ] ***Download*** 实现并发下载,多线程下载 
+- [ ] ***Res*** 集成 Resources,StreamingAssets-AB,网络下载AB,管理资源, 基于XAsset实现 AssetBundle,自定义开发AssetBundleEditor指定打包规则.
+	- [ ] ***Scene*** 基于Res(编辑器、AB),实现场景之间切换,附加,移除.
+	- [ ] ***Audio*** 基于Res(编辑器、AB),网络动态下载,网络在线资源(mp3,wav)等
+	- [ ] ***Picture*** 基于Res(编辑器、AB),实现Sprite自动化引用管理以及释放,网络动态下载,网络在线资源
+	- [ ] ***Entity*** 基于Res(编辑器、AB),实现GameObject 对象池处理资源加载卸载
+
+ 
+kit-tool
+- unity 自动打包
+	- [ ] android@{apk}
+	- [ ] ios@{xcode project,ipa}
+	- [ ] android@{apk} ios@{ipa] 自动上传 fir.im
+	- [ ] ios@{ipa} 自动上传appstore
+
+
 
 
 
@@ -37,6 +77,7 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 或者您也可以通过 issues 来提出您的问题，我们及时为您解答。
 
 请不要提问「现成」问题，即那些简单搜一搜就能得到答案的，对经验和洞察力几乎没有要求的问题。 
+
 详请参考《[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)》
 
 
@@ -47,7 +88,7 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 
 ## 项目开发计划
 
-进入 [KyLin 开发计划](https://www.teambition.com/project/5c641818c156ca00170bcc98/tasks/scrum/5c6418a49502f00017416bd7)来了解未来的开发序列。
+进入 [Kit开发计划](https://www.teambition.com/project/5c641818c156ca00170bcc98/tasks/scrum/5c6418a49502f00017416bd7)来了解未来的开发序列。
 
 
 ## 技术支持
@@ -57,7 +98,7 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 
 
 ## 优秀的开源框架/项目
-- [QFramework]()
+- [QFramework](https://github.com/liangxiegame/QFramework) QFramework 是一套 渐进式 的 快速开发 框架。目标是作为无框架经验的公司、独立开发者、以及 Unity3D 初学者们的 第一套框架。框架内部积累了多个项目的在各个技术方向的解决方案。学习成本低，接入成本低，重构成本低，二次开发成本低，文档内容丰富(提供使用方式以及原理、开发文档)。
 
 - [XAssets](https://github.com/xasset/xasset) xasset 提供了一种使用资源路径的简单的方式来加载资源，简化了Unity项目资源打包，更新，加载，和回收的作业流程。 ([fjy](https://github.com/fengjiyuan))
 
