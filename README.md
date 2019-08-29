@@ -1,13 +1,13 @@
 <p align="center"><img width="128" height="128" src="https://kylin.app/images/logo.png"></p>
 
 <p align="center">
-<a href="https://github.com/KylinTechnologies/kit-cre/blob/master/LICENSE">
+<a href="https://github.com/KyLin-Tech/kit-cre/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
 <a href="https://ci.appveyor.com/project/gjmvvv/kit">
   <img src="https://ci.appveyor.com/api/projects/status/tk3o571mwbw2rykj?svg=true" title="Build status"/></a>
-<a href="https://github.com/KylinTechnologies/kit/">
+<a href="https://github.com/KyLin-Tech/kit/">
   <img src="https://img.shields.io/badge/version-v1-green.svg" title="GitHub version" ></a>
-<a href="https://github.com/KylinTechnologies/kit/releases">
+<a href="https://github.com/KyLin-Tech/kit/releases">
   <img src="https://img.shields.io/badge/Download-1k-green.svg" title="Downloads" /></a>
 </p>
 
