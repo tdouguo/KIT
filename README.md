@@ -13,7 +13,7 @@
 
 > We are currently preparing to convert the comments in the code to the English version. We look forward to your joining.
 
-了解 [t-dou/Core](https://github.com/Kylin-Studio/kit-core) 源码
+了解 [Core](https://github.com/t-dou/kit-core) 源码
 
 
 ## 关于 Kit[尚未出生,孵化中. . . ]
