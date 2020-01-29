@@ -1,19 +1,19 @@
 <p align="center"><img width="128" height="128" src="https://kylin.app/images/logo.png"></p>
 
 <p align="center">
-<a href="https://github.com/KyLin-Tech/kit-cre/blob/master/LICENSE">
+<a href="https://github.com/t-dou/kit-cre/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
 <a href="https://ci.appveyor.com/project/gjmvvv/kit">
   <img src="https://ci.appveyor.com/api/projects/status/tk3o571mwbw2rykj?svg=true" title="Build status"/></a>
-<a href="https://github.com/KyLin-Tech/kit/">
+<a href="https://github.com/t-dou/kit/">
   <img src="https://img.shields.io/badge/version-v1-green.svg" title="GitHub version" ></a>
-<a href="https://github.com/KyLin-Tech/kit/releases">
+<a href="https://github.com/t-dou/kit/releases">
   <img src="https://img.shields.io/badge/Download-1k-green.svg" title="Downloads" /></a>
 </p>
 
 > We are currently preparing to convert the comments in the code to the English version. We look forward to your joining.
 
-了解 [Kylin-Studio/Core](https://github.com/Kylin-Studio/kit-core) 源码
+了解 [t-dou/Core](https://github.com/Kylin-Studio/kit-core) 源码
 
 
 ## 关于 Kit[尚未出生,孵化中. . . ]
@@ -93,8 +93,7 @@ kit-tool
 
 ## 技术支持
 
-* QQ群: 238442455
-* E-mail: kevin@kylin.app
+* E-mail: me@tdouplus.com
 
 
 ## 优秀的开源框架/项目
