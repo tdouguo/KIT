@@ -1,4 +1,6 @@
 
+# 介绍
+
 <p align="center">
 <a href="https://github.com/t-dou/kit-cre/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
@@ -19,6 +21,16 @@
 了解 [Core](https://github.com/t-dou/kit-core) 源码
 
 
+Kit for Unity 是Unity3D开发的工具包集合, 集成常见的开发组件以免于重复造轮子。
+
+Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目在任何阶段都可以轻松接入。
+
+由多个部分组成Kit, 例: 基础组件、业务服务等。
+
+- 任意基础组件都可抽取到其他项目中使用
+- 业务服务基于基础组件扩展(业务服务+依赖基础组件)即可抽取到其他项目中使用.
+
+
 ## 关于 Kit[尚未出生,孵化中. . . ]
 
 Kit 是Unity3D开发的工具包集合, 集成常见的开发组件,工具,组件库等. 免于重复造轮子
@@ -27,7 +39,7 @@ Kit 是Unity3D开发的工具包集合, 集成常见的开发组件,工具,组�
 
 ## 主要特色
 
-kit-core [.net]
+***kit-core (.net)***
 
 - base
 	- 静态工具(时间戳转换,字符串优化,IO相关操作)
@@ -37,7 +49,9 @@ kit-core [.net]
 - 线程池
 
 
-kit-unity
+***kit-unity***
+
+- [ ] 新手引导(NoviceGuide)
 - [ ] (Timeline)新手引导编辑器
 - [ ] (Timeline)剧情编辑器
 - [ ] 任务编辑器
@@ -49,9 +63,10 @@ kit-unity
 	- 刷地图版块功能
 - [ ] ***Setting*** 实现本地数据缓存, key=value
 - [ ] ***Network*** 实现网络连接 tcp,udp,kcp
-	- [ ] socket-tcp protobuf
+	- [ ] socket-tcp 功能:断线重连、心跳检测、粘包、拆包 扩展协议 protobuf
 	- [ ] scoket-udp
 	- [ ] socket-kcp
+	- [ ] net-htpp Get、Post请求, 提供自定义请求头,RES非对称加密 等技术处理
 - [ ] ***FSM*** 有限状态机
 - [ ] ***Download*** 实现并发下载,多线程下载 
 - [ ] ***Res*** 集成 Resources,StreamingAssets-AB,网络下载AB,管理资源, 基于XAsset实现 AssetBundle,自定义开发AssetBundleEditor指定打包规则.
@@ -59,23 +74,33 @@ kit-unity
 	- [ ] ***Audio*** 基于Res(编辑器、AB),网络动态下载,网络在线资源(mp3,wav)等
 	- [ ] ***Picture*** 基于Res(编辑器、AB),实现Sprite自动化引用管理以及释放,网络动态下载,网络在线资源
 	- [ ] ***Entity*** 基于Res(编辑器、AB),实现GameObject 对象池处理资源加载卸载
+- [ ] ***pool*** 对象池
+- [ ] ***Video*** 视频
+- [ ] ***Data***
+	1. data-table 二维表结构(excle,sqlite)
+	2. data-node 节点结构(xml,json)
+- [ ] ***Event*** 提供模块之间消息通讯, 以及异步线程之间通讯
+- [ ] 内嵌Web浏览器(BuiltInWeb)
+- [ ] 热更新(xLua\IRuntime)
+- [ ] ***Utility*** 工具 
+	1. [依赖Unity] 截屏、GPS定位、IO处理、音频转换(AudioClip)、Windows对话框、Misc(WWW请求、图片、UI、Input)等
+	2. 时间戳、 数据处理、Misc(string相关处理)等
+- [ ] ***i18n*** 国际化
+- [ ] ***Process*** 流程 控制游戏/App整体流程
 
- 
-kit-tool
+
+***kit-tool***
+
 - unity 自动打包
-	- [ ] android@{apk}
+	- [ ] android@{apk} 
 	- [ ] ios@{xcode project,ipa}
 	- [ ] android@{apk} ios@{ipa] 自动上传 fir.im
 	- [ ] ios@{ipa} 自动上传appstore
 
 
-
-
-
-
 ## 学习 Kit
 
-[文档](https://kylin.app/) 
+[文档](https://kit.tdouplus.com) 
 
 或者您也可以通过 issues 来提出您的问题，我们及时为您解答。
 
@@ -96,10 +121,22 @@ kit-tool
 
 ## 技术支持
 
-* E-mail: me@tdouplus.com
+- E-mail: me@tdouplus.com
+- slack: kit.slack (敬请期待)
+<!-- QQ群: 633542313 [![](https://pub.idqqimg.com/wpa/images/group.png)](//shang.qq.com/wpa/qunwpa?idkey=1235068de91ee5b340182dfa324f2d118fa586c8dd4053946763172de0f5d580) -->
+<!-- > QQ群禁止水聊，但对技术类提问范围不限制，如：遇到友情链接中的项目的问题也可以直接在群中`@相关作者`。 -->
 
 
-## 优秀的开源框架/项目
+## 友情链接
+
+### 热更新方案
+
+- [ILRuntime](https://github.com/Ourpalm/ILRuntime) 项目为基于C#的平台（例如Unity）提供了一个纯C#实现的，快速、方便并且可靠的IL运行时，使得能够在不支持JIT的硬件环境（如iOS）能够实现代码的热更新（`@蓝色幻想`）
+
+- [XLua](https://github.com/Tencent/xLua) 为Unity、 .Net、 Mono等C#环境增加Lua脚本编程的能力，借助xLua，这些Lua代码可以方便的和C#相互调用。（`@John`）
+
+
+### 优秀的开源框架/项目
 
 - [QFramework](https://github.com/liangxiegame/QFramework) QFramework 是一套 渐进式 的 快速开发 框架。目标是作为无框架经验的公司、独立开发者、以及 Unity3D 初学者们的 第一套框架。框架内部积累了多个项目的在各个技术方向的解决方案。学习成本低，接入成本低，重构成本低，二次开发成本低，文档内容丰富(提供使用方式以及原理、开发文档)。
 
