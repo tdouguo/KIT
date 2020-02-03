@@ -1,6 +1,4 @@
 
-# 介绍
-
 <p align="center">
 <a href="https://github.com/t-dou/kit-cre/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
