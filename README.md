@@ -1,4 +1,3 @@
-<p align="center"><img width="128" height="128" src="https://cdn.tdouplus.com/img/logo.png"></p>
 
 <p align="center">
 <a href="https://github.com/t-dou/kit-cre/blob/master/LICENSE">
