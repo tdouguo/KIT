@@ -16,8 +16,9 @@
 
 > We are currently preparing to convert the comments in the code to the English version. We look forward to your joining.
 
-了解 [Core](https://github.com/t-dou/kit-core) 源码
+This is a development kit that encapsulates common modules used in unity and .net development.
 
+了解 [Core](https://github.com/t-dou/kit-core) 源码
 
 Kit for Unity 是Unity3D开发的工具包集合, 集成常见的开发组件以免于重复造轮子。
 
