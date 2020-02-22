@@ -1,3 +1,6 @@
+<p align="center">
+<img src="https://cdn.tdouplus.com/img/kit-logo.png"  height="200" width="200">
+</p>
 
 <p align="center">
 <a href="https://github.com/t-dou/kit-cre/blob/master/LICENSE">
