@@ -3,18 +3,18 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/t-dou/kit-cre/blob/master/LICENSE">
+<a href="https://github.com/tdouguo/kit-cre/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
 <a href="https://ci.appveyor.com/project/gjmvvv/kit">
   <img src="https://ci.appveyor.com/api/projects/status/tk3o571mwbw2rykj?svg=true" title="Build status"/></a>
-<a href="https://github.com/t-dou/kit/">
+<a href="https://github.com/tdouguo/kit/">
   <img src="https://img.shields.io/badge/version-v1-green.svg" title="GitHub version" ></a>
-<a href="https://github.com/t-dou/kit/releases">
+<a href="https://github.com/tdouguo/kit/releases">
   <img src="https://img.shields.io/badge/Download-1k-green.svg" title="Downloads" /></a>
-<a href="https://github.com/t-dou/Kit">
-  <img src="https://img.shields.io/github/stars/t-dou/Kit.svg?style=social&label=Stars" title="GitHub stars" /></a>
-<a href="https://github.com/t-dou/Kit">
-  <img src="https://img.shields.io/github/forks/t-dou/Kit.svg?style=social&label=Fork" title="GitHub forks" /></a>
+<a href="https://github.com/tdouguo/Kit">
+  <img src="https://img.shields.io/github/stars/tdouguo/Kit.svg?style=social&label=Stars" title="GitHub stars" /></a>
+<a href="https://github.com/tdouguo/Kit">
+  <img src="https://img.shields.io/github/forks/tdouguo/Kit.svg?style=social&label=Fork" title="GitHub forks" /></a>
 </p>
 
 > We are currently preparing to convert the comments in the code to the English version. We look forward to your joining.
