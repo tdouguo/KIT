@@ -122,6 +122,10 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 <!-- QQ群: 633542313 [![](https://pub.idqqimg.com/wpa/images/group.png)](//shang.qq.com/wpa/qunwpa?idkey=1235068de91ee5b340182dfa324f2d118fa586c8dd4053946763172de0f5d580) -->
 <!-- > QQ群禁止水聊，但对技术类提问范围不限制，如：遇到友情链接中的项目的问题也可以直接在群中`@相关作者`。 -->
 
+---
+
+[![Stargazers over time](https://starchart.cc/tdouguo/KIT.svg)](https://starchart.cc/tdouguo/KIT)
+  
 
 ## 友情链接
 
