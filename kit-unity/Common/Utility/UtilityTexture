@@ -1,0 +1,178 @@
+using System;
+using UnityEngine;
+
+public static class UtilityTexture
+{
+    /// <summary>
+    /// 正常rgb 融合
+    /// </summary>
+    /// <param name="background"></param>
+    /// <param name="cover"></param>
+    /// <returns></returns>
+    public static Color NormalBlend_RGB(Color background, Color cover)
+    {
+        float CoverAlpha = cover.a;
+        Color blendColor;
+        blendColor.r = cover.r * CoverAlpha + background.r * (1 - CoverAlpha);
+        blendColor.g = cover.g * CoverAlpha + background.g * (1 - CoverAlpha);
+        blendColor.b = cover.b * CoverAlpha + background.b * (1 - CoverAlpha);
+        blendColor.a = 1;
+        return blendColor;
+    }
+
+    /// <summary>
+    /// 带有A 通道得融合
+    /// </summary>
+    /// <param name="background"></param>
+    /// <param name="cover"></param>
+    /// <returns></returns>
+    public static Color NormalBlend_RGBA(Color background, Color cover)
+    {
+        // float CoverAlpha = cover.a;
+        Color blendColor;
+        blendColor.a = cover.a + background.a * (1 - cover.a);
+        blendColor.r = (cover.r * cover.a + background.r * background.a * (1 - cover.a)) / (blendColor.a);
+        blendColor.g = (cover.g * cover.a + background.g * background.a * (1 - cover.a)) / (blendColor.a);
+        blendColor.b = (cover.b * cover.a + background.b * background.a * (1 - cover.a)) / (blendColor.a);
+        return blendColor;
+    }
+
+    public static Texture2D CopyT2DToWrite(Texture2D source)
+    {
+        // 先把Texture2D转成临时的RenderTexture
+        RenderTexture renderTex = RenderTexture.GetTemporary(
+            source.width,
+            source.height
+            , 0,
+            RenderTextureFormat.Default,
+            RenderTextureReadWrite.Linear
+        );
+        Graphics.Blit(source, renderTex);
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = renderTex;
+        // 复制进新的Texture2D
+        Texture2D readableText = new Texture2D(source.width, source.height);
+        readableText.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
+        readableText.Apply();
+        // 恢复_释放 RenderTexture
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(renderTex);
+        return readableText;
+    }
+
+    public static Texture2D MergeTexture2D(Color baseColor, Texture2D sprite)
+    {
+        Texture2D tex2d = new Texture2D(sprite.width, sprite.height);
+        Color32[] color32s = sprite.GetPixels32();
+        for (var i = 0; i < color32s.Length; i++)
+        {
+            color32s[i] = NormalBlend_RGBA(baseColor, color32s[i]);
+        }
+
+        tex2d.SetPixels32(color32s);
+        tex2d.Apply();
+        return tex2d;
+    }
+
+    public static Texture2D MergeTexture2D(this Texture2D target, Color baseColor, Texture2D addit)
+    {
+        if (target.width != addit.width && target.height != addit.height)
+        {
+            Debug.LogErrorFormat("当前合并贴图错误 宽度不匹配 无法合并 {0} {1}", target, addit);
+            return target;
+        }
+
+        Color32[] color32s = addit.GetPixels32();
+        for (var i = 0; i < color32s.Length; i++)
+        {
+            color32s[i] = NormalBlend_RGBA(baseColor, color32s[i]);
+        }
+
+        target.SetPixels32(color32s);
+        target.Apply();
+        return target;
+    }
+
+
+    public static Texture2D MergeImage(Texture2D[] tex)
+    {
+        if (tex.Length == 0)
+        {
+            return null;
+        }
+
+        //定义新图的宽高， 合并分为两种情况水平方向合并、垂直方向合并
+        int width = 0, height = 0;
+        for (int i = 0; i < tex.Length; i++)
+        {
+            width += tex[i].width;
+            if (i > 0)
+            {
+                //新图的高度，这里筛选为最高
+                if (tex[i].height > tex[i - 1].height)
+                {
+                    height = tex[i].height;
+                }
+            }
+            else height = tex[i].height; //只有一张图
+        }
+
+        //初始Texture2D
+        Texture2D texture2D = new Texture2D(width, height);
+        int x = 0, y = 0;
+        for (int i = 0; i < tex.Length; i++)
+        {
+            //取图
+            Color32[] color = tex[i].GetPixels32(0);
+
+            //赋给新图
+            if (i > 0)
+            {
+                //texture2D.SetPixels32(x, y+=tex[i-1].height, tex[i].width, tex[i].height, color); //高度
+                texture2D.SetPixels32(x += tex[i - 1].width, y, tex[i].width, tex[i].height, color); //宽度
+            }
+            else
+            {
+                texture2D.SetPixels32(x, y, tex[i].width, tex[i].height, color);
+            }
+        }
+
+        //应用
+        texture2D.Apply();
+        return texture2D;
+    }
+
+    /// <summary>
+    /// 合并贴图
+    /// </summary>
+    /// <param name="texs">贴图</param>
+    /// <param name="offsets">贴图位置,左下角(0,0)</param>
+    /// <param name="size">自己贴图的大小</param>
+    /// <returns></returns>
+    public static Texture2D Combine(Texture2D[] texs, ValueTuple<int, int>[] offsets, int size)
+    {
+        Texture2D @out = new Texture2D(size, size, TextureFormat.RGBA32, true);
+        for (int i = 0; i < texs.Length; i++)
+        {
+            var tex = texs[i];
+            var offest = offsets[i];
+            var width = tex.width;
+            var height = tex.height;
+            RenderTexture tmp = RenderTexture.GetTemporary(width, height,
+                0, RenderTextureFormat.Default,
+                RenderTextureReadWrite.Linear);
+            Graphics.Blit(tex, tmp);
+            RenderTexture previous = RenderTexture.active;
+            RenderTexture.active = tmp;
+            Texture2D @new = new Texture2D(width, height);
+            @new.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+            @new.Apply();
+            @out.SetPixels(offest.Item1, offest.Item2, width, height, @new.GetPixels());
+            RenderTexture.active = previous;
+            RenderTexture.ReleaseTemporary(tmp);
+        }
+
+        @out.Apply();
+        return @out;
+    }
+}
