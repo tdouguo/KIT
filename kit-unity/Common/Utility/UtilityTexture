@@ -312,4 +312,39 @@ public static class UtilityTexture
 
         return newImg;
     }
+
+    /// <summary>
+    /// 对比2个图片像素点是否相同
+    /// </summary>
+    /// <param name="spriteA"></param>
+    /// <param name="spriteB"></param>
+    /// <returns></returns>
+    public static bool AreSpritesIdentical(Sprite spriteA, Sprite spriteB)
+    {
+        Texture2D textureA = spriteA.texture;
+        Texture2D textureB = spriteB.texture;
+
+        // 比对尺寸
+        if (textureA.width != textureB.width || textureA.height != textureB.height)
+        {
+            return false;
+        }
+
+        // 逐像素比对
+        for (int y = 0; y < textureA.height; y++)
+        {
+            for (int x = 0; x < textureA.width; x++)
+            {
+                Color colorA = textureA.GetPixel(x, y);
+                Color colorB = textureB.GetPixel(x, y);
+
+                if (colorA != colorB)
+                {
+                    return false; // 发现不同的像素点
+                }
+            }
+        }
+
+        return true; // 所有像素点都相同
+    }
 }
