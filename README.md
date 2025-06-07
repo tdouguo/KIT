@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/tdouguo/kit-cre/blob/master/LICENSE">
+<a href="https://github.com/tdouguo/kit/blob/master/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" title="license-mit" /></a>
-<a href="https://ci.appveyor.com/project/gjmvvv/kit">
+<a href="https://ci.appveyor.com/project/tdouguo/kit">
   <img src="https://ci.appveyor.com/api/projects/status/tk3o571mwbw2rykj?svg=true" title="Build status"/></a>
 <a href="https://github.com/tdouguo/kit/">
   <img src="https://img.shields.io/badge/version-v1-green.svg" title="GitHub version" ></a>
@@ -21,7 +21,7 @@
 
 This is a development kit that encapsulates common modules used in unity and .net development.
 
-了解 [Core](https://github.com/t-dou/kit-core) 源码
+了解 [Core](https://github.com/tdouguo/kit-core) 源码
 
 Kit for Unity 是Unity3D开发的工具包集合, 集成常见的开发组件以免于重复造轮子。
 
@@ -157,6 +157,7 @@ Kit 设计初衷则是根据业务需求自由组合搭配其中组件, 项目�
 
 感谢 [JetBrains](https://www.jetbrains.com/?from=real-url) 提供的 free JetBrains Open Source license
 
+[![JetBrains-logo](https://i.loli.net/2020/10/03/E4h5FZmSfnGIgap.png)](https://www.jetbrains.com/?from=real-url)
+
 [![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
 
-[![JetBrains-logo](https://i.loli.net/2020/10/03/E4h5FZmSfnGIgap.png)](https://www.jetbrains.com/?from=real-url)
