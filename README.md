@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://cdn.tdouplus.com/img/kit-logo.png"  height="200" width="200">
+<img src="https://gh-cdn.58cdn.com/img/tdou.png"  height="200" width="200">
 </p>
 
 <p align="center">
